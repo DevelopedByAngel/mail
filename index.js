@@ -39,9 +39,9 @@ app.post('/',(req,res) =>
 
 	mailtransport.sendMail(mailOptions2, function(error, info){
 	  if (error) {
-	    res.json('error')
+	    res.json({msg:'error'})
 	  } else {
-	    res.json('mail sent')
+	    res.json({msg:'mail sent'})
 	  }
 	});
 })

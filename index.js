@@ -14,7 +14,22 @@ app.use(bodyParser.json());
 app.use(cors());
 app.get('/c',(req,res) =>
 {
-	res.json({msg:'ok'})
+	var mailOptions1 = {
+	  from: 'remainderevent@gmail.com',
+	  to: 'angelfrancis1111@gmail.com',
+	  subject:"Smart Agro System",
+	  html:  '<p> Hi '+'angel'+'<br><strong>Greetings from Agro Pro\'s </strong>.<br>Thanks for showing interest in our idea. Soon our team will contact you</p><img width="100" height="100" src="https://developedbyangel.github.io/SAS/logo.PNG"><br><br><br><p>Regards,<br><em>Team Agro Pro\'s</em></p>'
+	};
+
+	mailtransport.sendMail(mailOptions1, function(error, info){
+	  if (error) {
+	    console.log(error)
+	  } else {
+	    console.log(info)
+	  }
+	})
+	// .then(res.json({msg:'ok'}))
+	// .catch(err=>console.log(err))
 })
 app.post('/',(req,res) =>
 {

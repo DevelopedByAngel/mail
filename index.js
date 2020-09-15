@@ -28,9 +28,9 @@ app.post('/',(req,res) =>
 
 	mailtransport.sendMail(mailOptions1, function(error, info){
 	  if (error) {
-	    console.log('eror')
+	    console.log(error)
 	  } else {
-	    console.log('sent')
+	    console.log(info)
 	  }
 	});
 	var mailOptions2 = {

@@ -12,6 +12,10 @@ var mailtransport = nodemailer.createTransport({
 });
 app.use(bodyParser.json());
 app.use(cors());
+app.get('/c',(req,res) =>
+{
+	res.json({msg:'ok'})
+})
 app.post('/',(req,res) =>
 {
 	const{ name,email,message} = req.body;

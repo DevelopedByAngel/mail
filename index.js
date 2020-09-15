@@ -23,7 +23,7 @@ app.post('/',(req,res) =>
 	  from: 'remainderevent@gmail.com',
 	  to: email,
 	  subject:"Smart Agro System",
-	  html:  '<p> Hi '+name+'<br><strong>Greetings from Agro Pro\'s </strong>.<br>Thanks for showing interest in our idea. Soon our team will contact you</p><img width="100" height="100" src="https://developedbyangel.github.io/SAS/logo.PNG"><br><br><br><p>Regards,<br><em>Team Agro Pro\'s</em></p>'
+	  html:  '<p> Hi '+name+'<br><strong>Greetings from Agro Pro\'s </strong>.<br>Thanks for showing interest in our idea. Soon our team will contact you</p><br><br><br><p>Regards,<br><em>Team Agro Pro\'s</em></p>'
 	};
 
 	mailtransport.sendMail(mailOptions1, function(error, info){

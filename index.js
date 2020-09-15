@@ -3,12 +3,21 @@ const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
 const cors = require('cors');
 const app=express();
+// var mailtransport = nodemailer.createTransport({
+//   service: 'gmail',
+//   auth: {
+//     user: 'remainderevent@gmail.com',
+//     pass: 'remainder111'
+//   }
+// });
 var mailtransport = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: 'remainderevent@gmail.com',
-    pass: 'remainder111'
-  }
+    host: 'smtp.gmail.com',
+    port: 465,
+    secure: true, 
+    auth: {
+        user: 'remainderevent@gmail.com', 
+        pass: 'remainder111' 
+    }
 });
 app.use(bodyParser.json());
 app.use(cors());
@@ -28,8 +37,6 @@ app.get('/c',(req,res) =>
 	    console.log(info)
 	  }
 	})
-	// .then(res.json({msg:'ok'}))
-	// .catch(err=>console.log(err))
 })
 app.post('/',(req,res) =>
 {
